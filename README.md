@@ -16,7 +16,7 @@
  <details> 
    <summary> Cryptocurrency </summary>
    
-   * Bitcoin reloes on several cryptographic algorithms. When Bob sending transaction sending money he signs with cryptographic digital signature so the bookkeeper can authorized bob for that transaction. Cryptographic digital signature does the same thing that a real signature doing to prove authorization. 
+   * Bitcoin relies on several cryptographic algorithms. When Bob sending transaction sending money he signs with cryptographic digital signature so the bookkeeper can authorized bob for that transaction. Cryptographic digital signature does the same thing that a real signature doing to prove authorization. 
    * Digital signature relies on public key encryption. Each bitcoin account or address is basickly a `public key` and `private key` is a password to generate signature to spend money
    * Security: Since it is decentralized action so we need voting system for go with majority of legends. If you loose your password as private key you loose the money you have in bitcoin. It requires at least an hour after transaction to make sure network fully agreed with on and accepted.
    * To buy bitcoin go to `https://www.coinbase.com/` or you can see all atms from `https://coinatmradar.com/` 

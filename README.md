@@ -29,7 +29,17 @@
  <details> 
    <summary> Bitcoinj </summary>
    * [Bitcoinj](https://bitcoinj.github.io/getting-started) implemented in Java 7 and can be used any languages that target the JVM
-   * 
+   
+   ```javascript
+   npm install bitcoinjs-lib
+   node // go to node env to test
+   var bitcoin = require("bitcoinjs-lib");
+   var keypair = bitcoin.ECPair.makeRandom();
+   var address = keypair.getAddress();
+   console.log(keypair.toWIF());
+   var vanity = address.substring(0,10);
+   console.log(vanity);
+   ```
    
   
   </details>  

@@ -11,6 +11,11 @@
 * When Bob wants to transfer `5.2` amount of bitcoin to Carol he broadcasts a transaction message which contains his account number, Carol account number and the amount of the money. Bookkeeper received the message and adjust it's `Ledger` then they pass the transaction to other bookkeepers to update their `ledger`. 
 * Bitcoin is just a group of people maintaining a `Ledger`
 * `blockchain.info` displays the transaction on bitcoin.
+* Usefull links [bitcoinjs-lib](https://github.com/bitcoinjs/bitcoinjs-lib) , [bitcoin](http://bcoin.io/) , [bitcoin-github](https://bitcoinj.github.io), Ethereum: [etherum](https://github.com/ethereum/go-ethereum), [ethereum](https://geth.ethereum.org/),
+Monero:
+- https://github.com/mymonero/mymonero-core-js
+Dash:
+- https://github.com/dashevo/dashcore-lib
  </details>
  
  <details> 

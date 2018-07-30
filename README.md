@@ -34,7 +34,7 @@
 startgas is maximum cost of gas which may be used and gasprice is the amount we ready to pay ![alttext](https://user-images.githubusercontent.com/7471619/43428209-0ce33e82-9412-11e8-979b-146e2f77125d.png)
 * Ethereum on Microsoft Azure. Consortium means collboration between supporting members of blockchain with underlying infrastructure. 
 * It starts with consortium leader and consorium members can join it. 
-* The application should allow to call a VPN. And VPN call to one of transaction nodes. Nodes which handling transactions are isolating from mining nodes and mining nodes are not accessible from outside of Virtual Private Network. This is all we need to operate a block chain. [Axe Miners]()
+* The application should allow to call a VPN. And VPN call to one of transaction nodes. Nodes which handling transactions are isolating from mining nodes and mining nodes are not accessible from outside of Virtual Private Network. This is all we need to operate a block chain. ![Axe Miners](https://user-images.githubusercontent.com/7471619/43428217-18a38574-9412-11e8-8042-7803a32e7536.png)
 * Blochchain consortium on Azure and let Azure create Genesis block feeding it with some ether for us. And to prove that everything works we transfer ether between two accounts
 
 

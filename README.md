@@ -1,5 +1,45 @@
 # Blockchain
 
+* Blockchain development is the next big thing after invention of Internet
+* With blockchain you can transfer a large money almost instanly to even war foriegn countries and transfer money directly to the device or certifications and secure information in blockchain and even control your virtual products like musicions. 
+* 
+
+## Fundamental Blockchain
+
+<details> 
+  <summary> Fundamental Blockchain </summary>
+
+* Blockchain is Global singleton and unstoppable and no single point of attack. 
+* Bloc: has data, a hash, number(order in chain), timestamp, and the hash of the previous block.
+* Data save into block is accessible to everyone accessing the chain. There are two ways to make private data on blockchain
+* 1 - Obfuscation: Means make data relevant to those who know that meaning like bitcoin 
+* 2 - Encryption: We can encrypt the block so only the ones has key can access to block. One of the most secure hashing standard is Advance Encryption Standard (AES). Take our original message and produce a new hash. 
+
+### Public/private 
+* Public: Available to everyone, expensive transactions and storage. 
+* Private: Not distributed and similar to traditional database. You can control cost and who can access the data
+
+
+</details> 
+
+
+<details> 
+  <summary> Ethereum</summary>
+
+* Is a platform and program languages available since 2015. It is programming language. It has it's own crypto currency called Ether same as bitcoin and is fast response so it is good for applications. 
+* Ethereum goal applications and good comunity support 
+* Smart contract: are peices of codes lives on blockchain, they read other contracts, make decision, send ether and execute other contracts. 
+* `Gas` is internal pricing for running contracts in ethereum and the amount of gas depends on Computation memory bandwidth storage.  
+* `Transaction` sending package of data from one account to another including `recipeint, signature,value, gasprice, startgas, message`
+startgas is maximum cost of gas which may be used and gasprice is the amount we ready to pay.
+* Ethereum on Microsoft Azure. Consortium means collboration between supporting members of blockchain with underlying infrastructure. 
+* It starts with consortium leader and consorium members can join it. 
+* The application should allow to call a VPN. And VPN call to one of transaction nodes. Nodes which handling transactions are isolating from mining nodes and mining nodes are not accessible from outside of Virtual Private Network. This is all we need to operate a block chain. [Axe Miners]()
+* Blochchain consortium on Azure and let Azure create Genesis block feeding it with some ether for us. And to prove that everything works we transfer ether between two accounts
+
+
+</details> 
+
 ## Big Idea
 
 <details> 
@@ -47,8 +87,7 @@ Dash:
    var vanity = address.substring(0,10);  // generate vanity 
    console.log(vanity);
    ```
-   
-  
+
   </details>  
 
 

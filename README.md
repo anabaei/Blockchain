@@ -31,7 +31,7 @@
 * Smart contract: are peices of codes lives on blockchain, they read other contracts, make decision, send ether and execute other contracts. 
 * `Gas` is internal pricing for running contracts in ethereum and the amount of gas depends on Computation memory bandwidth storage.  
 * `Transaction` sending package of data from one account to another including `recipeint, signature,value, gasprice, startgas, message`
-startgas is maximum cost of gas which may be used and gasprice is the amount we ready to pay.
+startgas is maximum cost of gas which may be used and gasprice is the amount we ready to pay ![alttext](https://user-images.githubusercontent.com/7471619/43428209-0ce33e82-9412-11e8-979b-146e2f77125d.png)
 * Ethereum on Microsoft Azure. Consortium means collboration between supporting members of blockchain with underlying infrastructure. 
 * It starts with consortium leader and consorium members can join it. 
 * The application should allow to call a VPN. And VPN call to one of transaction nodes. Nodes which handling transactions are isolating from mining nodes and mining nodes are not accessible from outside of Virtual Private Network. This is all we need to operate a block chain. [Axe Miners]()

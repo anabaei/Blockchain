@@ -39,7 +39,7 @@ startgas is maximum cost of gas which may be used and gasprice is the amount we 
 * On Azuer -> Portal -> + -> ethereum -> select ethereum consorium leader(Ethereum Proof-of-Work Consortium) -> bcl prefix -> gethadmin VM user -> resource group choose blockchain(to share same policy, life cycle and permissions) -> number of mining nodes(choose min 2) -> keep defaults with 1 node 
 * Set ethereum -> Network id is name of ethereum(10101010) and go with default which you end to see below ![ethereum](https://user-images.githubusercontent.com/7471619/43430858-ed18e15c-941f-11e8-9235-8eeb2384b12a.png)
 * After downloading -> select deployment -> select microsoftazure.blockchain-multimember-blo -> then we see everything we need
-
+* Link to ceate a [blockchain](https://docs.microsoft.com/en-us/azure/blockchain-workbench/ethereum-deployment-guide)
 
 
 </details> 

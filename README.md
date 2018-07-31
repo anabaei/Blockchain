@@ -43,13 +43,18 @@ startgas is maximum cost of gas which may be used and gasprice is the amount we 
 * Then inside `ADMIN-SITE` in My account address we get an ether to get block chain started
 
 #### Wallet 
-* We use metamask chrome app extension. After downloading and creating a new pass account, then go to settings to connect to our newly created blockchain. Paset RPC URL and save it, then you refresh metamask and back you are connected seeing this ![meta mask](https://user-images.githubusercontent.com/7471619/43487510-b8802278-94cb-11e8-9bfe-50559c48d32f.png)
-* To add etherem copy address and paste it in admin page and click submit [meta mask]() and then you see the results in wallet as 
+* We use metamask chrome app extension. After downloading and creating a new pass account, then go to settings to connect to our newly created blockchain. Paset RPC URL and save it, then you refresh metamask and back you are connected seeing this 
 ![here](https://user-images.githubusercontent.com/7471619/43487285-0c96363c-94cb-11e8-9ef3-b8404e89699e.png)
+* To add etherem copy address and paste it in admin page and click submit  and then you see the results in wallet as 
+![here](https://user-images.githubusercontent.com/7471619/43488038-41919258-94cd-11e8-8f77-19b8ff544a34.png)
 * Copy address from Ethereum RPC Endpoint and use it in wallet application called metamask which is a chrome extention app.  
+* So far we created our own  blockchain on the Azure using consortium template. Then we transfered money between one wallet(one account) and another account. 
+* We need some `npm i ethereumjs-testing` and `npm i -g truffle `
 
-
-
+#### Smart Contracts
+* We use `solidity` language to write contracts which is supported by ethereum and bitoin block chain. Then we must compile bitcode. We use a framework to compile the contract called `truffle`. After compiling successfully we upload it and wait to be mind then we can start interacting with it. It can be from a User Interface or directly through htttp post requests. 
+* If you dont give size for `int` it uses max size (256). Also `solidity` has a data type name `address`. Also it has `Access Modifiers` to allow code access from where we expect only. `Private` means only this contract can be accessed and modified the information. `internal` means contracts which driving from this contract can access and `external` disallow internal access and only externals can access a simple contract is like below ![below]()
+* 
 </details> 
 
 ## Big Idea

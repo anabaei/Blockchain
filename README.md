@@ -36,6 +36,8 @@ startgas is maximum cost of gas which may be used and gasprice is the amount we 
 * It starts with consortium leader and consorium members can join it. 
 * The application should allow to call a VPN. And VPN call to one of transaction nodes. Nodes which handling transactions are isolating from mining nodes and mining nodes are not accessible from outside of Virtual Private Network. This is all we need to operate a block chain. ![Axe Miners](https://user-images.githubusercontent.com/7471619/43428217-18a38574-9412-11e8-8042-7803a32e7536.png)
 * Blochchain consortium on Azure and let Azure create Genesis block feeding it with some ether for us. And to prove that everything works we transfer ether between two accounts
+* On Azuer -> Portal -> + -> ethereum -> select ethereum consorium leader(Ethereum Proof-of-Work Consortium) -> bcl prefix -> gethadmin VM user -> resource group choose blockchain(to share same policy, life cycle and permissions) -> number of mining nodes(choose min 2) -> keep defaults with 1 node 
+* Set ethereum -> Network id is name of ethereum(10101010) and go with default which you end to see below [ethereum ]()
 
 
 </details> 

@@ -43,12 +43,11 @@ startgas is maximum cost of gas which may be used and gasprice is the amount we 
 * Then inside `ADMIN-SITE` in My account address we get an ether to get block chain started
 
 #### Wallet 
-* We use metamask chrome app extension. After downloading and creating a new pass account, then go to settings to connect to our newly created blockchain. Paset RPC URL and save it, then you refresh metamask and back you are connected seeing this [meta mask]()
+* We use metamask chrome app extension. After downloading and creating a new pass account, then go to settings to connect to our newly created blockchain. Paset RPC URL and save it, then you refresh metamask and back you are connected seeing this ![meta mask](https://user-images.githubusercontent.com/7471619/43487510-b8802278-94cb-11e8-9bfe-50559c48d32f.png)
 * To add etherem copy address and paste it in admin page and click submit [meta mask]() and then you see the results in wallet as 
-[here]()
-* 
-
+![here](https://user-images.githubusercontent.com/7471619/43487285-0c96363c-94cb-11e8-9ef3-b8404e89699e.png)
 * Copy address from Ethereum RPC Endpoint and use it in wallet application called metamask which is a chrome extention app.  
+
 
 
 </details> 

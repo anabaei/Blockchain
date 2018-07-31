@@ -40,6 +40,15 @@ startgas is maximum cost of gas which may be used and gasprice is the amount we 
 * Set ethereum -> Network id is name of ethereum(10101010) and go with default which you end to see below ![ethereum](https://user-images.githubusercontent.com/7471619/43430858-ed18e15c-941f-11e8-9235-8eeb2384b12a.png)
 * After downloading -> select deployment -> select microsoftazure.blockchain-multimember-blo -> then we see everything we need
 * Link to ceate a [blockchain](https://docs.microsoft.com/en-us/azure/blockchain-workbench/ethereum-deployment-guide)
+* Then inside `ADMIN-SITE` in My account address we get an ether to get block chain started
+
+#### Wallet 
+* We use metamask chrome app extension. After downloading and creating a new pass account, then go to settings to connect to our newly created blockchain. Paset RPC URL and save it, then you refresh metamask and back you are connected seeing this [meta mask]()
+* To add etherem copy address and paste it in admin page and click submit [meta mask]() and then you see the results in wallet as 
+[here]()
+* 
+
+* Copy address from Ethereum RPC Endpoint and use it in wallet application called metamask which is a chrome extention app.  
 
 
 </details> 

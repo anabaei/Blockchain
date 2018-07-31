@@ -49,12 +49,48 @@ startgas is maximum cost of gas which may be used and gasprice is the amount we 
 ![here](https://user-images.githubusercontent.com/7471619/43488038-41919258-94cd-11e8-8f77-19b8ff544a34.png)
 * Copy address from Ethereum RPC Endpoint and use it in wallet application called metamask which is a chrome extention app.  
 * So far we created our own  blockchain on the Azure using consortium template. Then we transfered money between one wallet(one account) and another account. 
-* We need some `npm i ethereumjs-testing` and `npm i -g truffle `
+* We need some `npm install -g ethereumjs-testrpc` and `npm i -g truffle `
 
 #### Smart Contracts
 * We use `solidity` language to write contracts which is supported by ethereum and bitoin block chain. Then we must compile bitcode. We use a framework to compile the contract called `truffle`. After compiling successfully we upload it and wait to be mind then we can start interacting with it. It can be from a User Interface or directly through htttp post requests. 
-* If you dont give size for `int` it uses max size (256). Also `solidity` has a data type name `address`. Also it has `Access Modifiers` to allow code access from where we expect only. `Private` means only this contract can be accessed and modified the information. `internal` means contracts which driving from this contract can access and `external` disallow internal access and only externals can access a simple contract is like below ![below]()
-* 
+* If you dont give size for `int` it uses max size (256). Also `solidity` has a data type name `address`. Also it has `Access Modifiers` to allow code access from where we expect only. `Private` means only this contract can be accessed and modified the information. `internal` means contracts which driving from this contract can access and `external` disallow internal access and only externals can access a simple contract is like below ![below](https://user-images.githubusercontent.com/7471619/43490458-9c277d10-94d5-11e8-8c37-2b3edab71d54.png)
+#### Truffle & RPC
+* Is a framework that allows us to compile, test and make deployment the contracts into the real world!. Also We can use Truffle in console without directing contacting contracts [truffle](https://github.com/trufflesuite/truffle/releases/tag/v4.0.0)  
+* To test the contracts before releasing we need Test RPC. It is there to use local test blockchain. Test RPC implements `ethereumjs` which is the same set of structure in ethereum blockchain. It also created Test accounts for you with connected private keys 
+
+#### Hello World Contract
+* run in terminal `truffle init` then open in visual code 
+* Create file `hellowrold.sol` in contracts folder as
+```java
+pragma solidity ^0.4.4;
+contract HelloWorld
+{
+    function SayHello() returns (string)
+    {
+        return("Hello World");
+    }
+}
+```
+* Then need to create migration by adding these to migration files
+```java
+var Migrations = artifacts.require("./Migrations.sol");
+var HelloWorld = artifacts.require("./helloworld.sol");
+module.exports = function(deployer) {
+  deployer.deploy(Migrations);
+  deployer.deploy(HelloWorld);
+};
+```
+* Then run `testrpc` to create acoutns and run on the server. Then we compile our solution by running `truffie compile`. After compile we ready to deploy contract into blockchain by
+```java
+truffle migrate --reset
+```
+* Now our contract successfully deployed to our block chain and you see the addresses.  It is ready to go create User interface but in truffle we can test it out in truffle console mode.
+* Run `truffle console` and allow us to run javascript directly into our contract as ![here]()
+
+
+
+
+
 </details> 
 
 ## Big Idea

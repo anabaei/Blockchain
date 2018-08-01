@@ -169,24 +169,64 @@ truffle console
  network_id: "*" // Match any network id
   },
    production: {
-   host: "bclqsu-dns-reg1.westus.cloudapp.azure.com",  // use ethereum RPC endpoint address the same for wallet 
+   host: "bc////-//////////////.azure.com",  // use ethereum RPC endpoint address the same for wallet 
    port: 8545,
-   network_id: "*" // Match any network id
+   network_id: "*", // Match any network id
+ gas: 4500000,
+ gasPrice: 21000000000
   }
 }
 ```
-* 
+* one way to assign gasprice in tstrpc is running like `testrpc --gasLimit 6721975 --gasPrice 100000000000`
 ```java
 truffle compile
 truffle migrate --network production --reset .  // we get err since it is locked
-// paste ssh end point
+// paste ssh end point at another terminal 
 geth attach // is a javascript console that enable us to send data directly to blockchain 
 personal.unlockAccount(eth.coinbase)  // to unlock default account so as long as this window is open the account is unlock
+truffle migrate --network production --reset // run it again 
 ```
-* one way to assign gasprice in tstrpc is running like `testrpc --gasLimit 6721975 --gasPrice 100000000000`
-* 
+* Now our contract is updated and running in production blockchain. To check it we can go to production console by 
+```javascript
+truffle console --network production --reset
+> ScoreStore.deployed().then(function(deployed){ss=deployed;});
+> ss.AddPersonScore("amirnabaei", 17);  // when setting variables we use direct call as here, if we wanted return then we add call as in dev environment we did (to get async handler back)
+> ss.GetScore.call("amirnabaei");
+```
+* By passing above it says our ScoreStore program now running on blockchain and is ready to use. 
+#### Call External Contract
+* We want to call contract a from contract b
+* After running truffle init then create a contract 
+First define a contract that resemble the contract we already have at another place to tell solidity about the structure of the contract we are going to use. We can define limited function in it. We call our interface IScoreStore. Since we are going to use only GetScore function so we just make a place holder of it first. MyGame is our contract which going to have a function showname using getName funciton from storescore contract. Inside ShowScore create instance of our interface and we call it scorestore.
+
+
+```java
+prgma solidity ^0.4.4;
+
+contract IScoreStore{
+   function GetStore(string name) returns (int);
+ 
+ contract MyGame{
+    function ShowScore(string name) returns (int)
+    {
+      IScoreStore scorestore = IScoreStore(passTheAddress from terminal by running  ScoreStore.deployed() in console mode)
+      return scorestore.GetScore(name);
+    }
+ }
+
+```
+
+
 
 </details> 
+
+<details>
+  <summary> Call External function </summary>
+  
+  
+  
+</details>   
+  
 
 ## Big Idea
 

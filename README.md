@@ -90,7 +90,30 @@ truffle migrate --reset
 HelloWorld.deployed().then(function(deployed){hw=deployed;});
 hw.SayHello.call();
 ```
+### Solidity
+* `Structs` are custom defined types that includes several variables. Structs can also contain other structs
+```java
+struct Person
+{
+  unit age;
+  bool isCool;
+  address accountAddress;
+}
+```
+* `Enum` is a list of finit set of values. 
+```java
+enum Gender {Male, Female, NotSpecific}
+```
+* `Arrays` has same data type `string[] names; string[4] person` 
+*  `Mapping` for example `mapping(address => uint) public balance` have a list of currency addresses in an array of integers. To access it use the type to access it as `return balance[account.Address];`
+* Only possiblity a code removed from blockchain is when the contract using `Selfdestruct` function as `selfdestruct(msg.sender)`. To clean a contract use `clean(objectArray)` and delete all store variables. Delete is less destructive than selfdestruct.
+* `Throw()` can return error if something happend. 
 
+### Data Location
+* Default location of each data type can be changed but default is like as 
+* `Memory`: parameters including return params are in memory
+* `Storage`: default for local variable is storage and location is forced to state variable 
+* `Call Data`: non modifiable nonpersistant area where functions and arguments stored
 
 </details> 
 

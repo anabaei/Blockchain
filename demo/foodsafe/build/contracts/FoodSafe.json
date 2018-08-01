@@ -1,0 +1,97 @@
+{
+  "contractName": "FoodSafe",
+  "abi": [],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603580601d6000396000f3006080604052600080fd00a165627a7a7230582057e8c639e67007a28797c6479307a4ffa8578284b2f4158bc2ec91699556a3530029",
+  "deployedBytecode": "0x6080604052600080fd00a165627a7a7230582057e8c639e67007a28797c6479307a4ffa8578284b2f4158bc2ec91699556a3530029",
+  "sourceMap": "26:26:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;26:26:0;;;;;;;",
+  "deployedSourceMap": "26:26:0:-;;;;;",
+  "source": "pragma solidity ^0.4.17;\n\ncontract FoodSafe\n{\n    \n}",
+  "sourcePath": "/Users/amirnabaei/Desktop/sites/Blockchain/demo/foodsafe/contracts/FoodSafe.sol",
+  "ast": {
+    "absolutePath": "/Users/amirnabaei/Desktop/sites/Blockchain/demo/foodsafe/contracts/FoodSafe.sol",
+    "exportedSymbols": {
+      "FoodSafe": [
+        2
+      ]
+    },
+    "id": 3,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 2,
+        "linearizedBaseContracts": [
+          2
+        ],
+        "name": "FoodSafe",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 3,
+        "src": "26:26:0"
+      }
+    ],
+    "src": "0:52:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/amirnabaei/Desktop/sites/Blockchain/demo/foodsafe/contracts/FoodSafe.sol",
+    "exportedSymbols": {
+      "FoodSafe": [
+        2
+      ]
+    },
+    "id": 3,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".17"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:0"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 2,
+        "linearizedBaseContracts": [
+          2
+        ],
+        "name": "FoodSafe",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 3,
+        "src": "26:26:0"
+      }
+    ],
+    "src": "0:52:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.24+commit.e67f0147.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.1",
+  "updatedAt": "2018-08-01T22:50:51.215Z"
+}

@@ -230,8 +230,14 @@ mg.ShowScore.call("amirnabaei").then(function(returnValue){console.log(returnVal
   * In this case user is an ethereum account. Also `Webpack` a module bundler allows us to make javascript application unify and reduce complexity. It bundle all files and make it ready for execution on browser
   ```java
   truffle unbox webpack
-  
+  testrpc // anpther tab
+  truffle develop
+  migrate 
+  npm run dev
   ```
+  * To test trading ether we use our account we have in our test server (from testrpc). copy private key and paste into `metamask -> import Account` 
+  * In contract folder already has `Metacoin` contract sending and trade and has method to get data from specified address. 
+
   
 </details>   
   

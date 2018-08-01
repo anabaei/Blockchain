@@ -114,6 +114,77 @@ enum Gender {Male, Female, NotSpecific}
 * `Memory`: parameters including return params are in memory
 * `Storage`: default for local variable is storage and location is forced to state variable 
 * `Call Data`: non modifiable nonpersistant area where functions and arguments stored
+</details> 
+
+<details> 
+   <summary> Demo </summary>
+* This Demo(ScoreStore) game is a simple contract for storage that is deploying to private Ethereum
+* `truffle init` and create `ScoreStore.sol` and use mapping to map string to ints and save it as PersonScores
+
+```java
+pragma solidity ^0.4.4;
+contract ScoreStore
+{
+    mapping(string => int) PersonScores;
+    function AddPersonScore(string name, int startingScore){
+        if(PersonScores[name]>0)
+        {
+            throw;
+        }
+        else{
+            PersonScores[name] = startingScore;
+        }
+    }
+    function GetScore(string name) returns (int){
+        return PersonScores[name];
+    }
+}  
+```
+* Make sure your truffle.js is like 
+```java
+module.exports = {
+   networks: {
+   development: {
+   host: "localhost",
+   port: 8545,
+   network_id: "*" // Match any network id
+  }
+ }
+};
+```
+* Notice: If you run truffle develop you don't need testrpc anymore. Since truffle develop runs on port 9545 you have to modify your truffle.js
+* Then write it in migarate file and then 
+```java
+truffle compile 
+testrpc  // keep it running 
+truffle migrate --rebase 
+truffle console 
+ > var ss //add async to a variable 
+ > ScoreStore.deployed().then(function(deployed){ss=deployed;});
+ > ss.AddPersonScore("amirnabaei", 17);
+ >  ss.GetScore.call("amirnabaei"); // Check to see if it got stored 
+```
+* Now we know our code works lets publish it into a blockchain. For this add production section to truffle.js as 
+```java
+ network_id: "*" // Match any network id
+  },
+   production: {
+   host: "bclqsu-dns-reg1.westus.cloudapp.azure.com",  // use ethereum RPC endpoint address the same for wallet 
+   port: 8545,
+   network_id: "*" // Match any network id
+  }
+}
+```
+* 
+```java
+truffle compile
+truffle migrate --network production --reset .  // we get err since it is locked
+// paste ssh end point
+geth attach // is a javascript console that enable us to send data directly to blockchain 
+personal.unlockAccount(eth.coinbase)  // to unlock default account so as long as this window is open the account is unlock
+```
+* one way to assign gasprice in tstrpc is running like `testrpc --gasLimit 6721975 --gasPrice 100000000000`
+* 
 
 </details> 
 

@@ -85,10 +85,11 @@ module.exports = function(deployer) {
 truffle migrate --reset
 ```
 * Now our contract successfully deployed to our block chain and you see the addresses.  It is ready to go create User interface but in truffle we can test it out in truffle console mode.
-* Run `truffle console` and allow us to run javascript directly into our contract as ![here]()
-
-
-
+* Run `truffle console` and allow us to run javascript directly into our contract as ![here](https://user-images.githubusercontent.com/7471619/43498265-092e646c-94fb-11e8-8bef-39650660587c.png)
+```java
+HelloWorld.deployed().then(function(deployed){hw=deployed;});
+hw.SayHello.call();
+```
 
 
 </details> 

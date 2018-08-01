@@ -228,15 +228,34 @@ mg.ShowScore.call("amirnabaei").then(function(returnValue){console.log(returnVal
   * Create End to End Application with Ethereum FoodSage
   * Ethereum JavaScript API is the one we use in console mode and we can use them in webpages. Web3.js in JavaScrpit API has all function we need like it calls RPC calls for us and another thing it work with Metamask API to do all authentications. We need to find who can do what instead of who the user is. 
   * In this case user is an ethereum account. Also `Webpack` a module bundler allows us to make javascript application unify and reduce complexity. It bundle all files and make it ready for execution on browser
-  ```java
+   * In contract folder already has `Metacoin` contract sending and trade and has method to get data from specified address
+ ```java
   truffle unbox webpack
   testrpc // anpther tab
-  truffle develop
-  migrate 
+  truffle compile // or develop 
+  Truffle migrate
   npm run dev
   ```
-  * To test trading ether we use our account we have in our test server (from testrpc). copy private key and paste into `metamask -> import Account` 
-  * In contract folder already has `Metacoin` contract sending and trade and has method to get data from specified address. 
+  * Make sure your truffle.js connect to local network correctly and then connect metamask to local8545 as well 
+ ```java
+ module.exports = {
+  networks: {
+  development: {
+  host: "localhost",
+  port: 8545,
+  network_id: "*" // Match any network id
+ }
+}
+}
+ ```
+ * If you encounter error use [this](https://ethereum.stackexchange.com/questions/15937/truffle-sample-dapp-doesnt-show-metacoin-balance-when-metamask-is-active)
+  * To test trading ether we use our account we have in our test server (from testrpc). copy private key and paste into `metamask -> import Account` then if you refresh page you see the updated metacoin, also you can send to any accounts in metamask from this page as well. 
+  
+  #### FoodSafe 
+  * This app uses ethereum blockchain to store information or is a food tracking app. Also we learn how to keep secrets into blockchain
+  * For each new batch of product we will be adding new contract to the chain instead of trackin gall products with the same contract and application is able write and read information into contracts(including secretes and public info)
+  * First create a contract and test it with TestRPC and verify
+  
 
   
 </details>   

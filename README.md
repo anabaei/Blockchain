@@ -55,7 +55,7 @@ startgas is maximum cost of gas which may be used and gasprice is the amount we 
 * We use `solidity` language to write contracts which is supported by ethereum and bitoin block chain. Then we must compile bitcode. We use a framework to compile the contract called `truffle`. After compiling successfully we upload it and wait to be mind then we can start interacting with it. It can be from a User Interface or directly through htttp post requests. 
 * If you dont give size for `int` it uses max size (256). Also `solidity` has a data type name `address`. Also it has `Access Modifiers` to allow code access from where we expect only. `Private` means only this contract can be accessed and modified the information. `internal` means contracts which driving from this contract can access and `external` disallow internal access and only externals can access a simple contract is like below ![below](https://user-images.githubusercontent.com/7471619/43490458-9c277d10-94d5-11e8-8c37-2b3edab71d54.png)
 #### Truffle & RPC
-* Is a framework that allows us to compile, test and make deployment the contracts into the real world!. Also We can use Truffle in console without directing contacting contracts [truffle](https://github.com/trufflesuite/truffle/releases/tag/v4.0.0)  
+* Is a framework that allows us to compile, test and make deployment the contracts into the real world!. Also We can use Truffle in console without directing contacting contracts [truffle](https://github.com/trufflesuite/truffle/releases/tag/v4.0.0) and [this](https://truffleframework.com/docs/getting_started/project)
 * To test the contracts before releasing we need Test RPC. It is there to use local test blockchain. Test RPC implements `ethereumjs` which is the same set of structure in ethereum blockchain. It also created Test accounts for you with connected private keys 
 
 #### Hello World Contract
@@ -80,6 +80,7 @@ module.exports = function(deployer) {
   deployer.deploy(HelloWorld);
 };
 ```
+* We can remove not needed `deployer` to avoid expending unnecessary `ether` when deplying to production 
 * Then run `testrpc` to create acoutns and run on the server. Then we compile our solution by running `truffie compile`. After compile we ready to deploy contract into blockchain by
 ```java
 truffle migrate --reset
@@ -202,10 +203,8 @@ First define a contract that resemble the contract we already have at another pl
 
 ```java
 prgma solidity ^0.4.4;
-
 contract IScoreStore{
    function GetStore(string name) returns (int);
- 
  contract MyGame{
     function ShowScore(string name) returns (int)
     {
@@ -213,20 +212,30 @@ contract IScoreStore{
       return scorestore.GetScore(name);
     }
  }
-
 ```
-
-
-
+* Then to call the function we have these in console
+```java
+var mg
+MyGame.deployed().then(function(deployed){mg-deployed;});
+mg.ShowScore.call("amirnabaei").then(function(returnValue){console.log(returnValue);});
+```
+* In this way we can access to contracts that others that have made. 
 </details> 
 
 <details>
-  <summary> Call External function </summary>
+  <summary> Sample Application </summary>
   
+  * Create End to End Application with Ethereum FoodSage
+  * Ethereum JavaScript API is the one we use in console mode and we can use them in webpages. Web3.js in JavaScrpit API has all function we need like it calls RPC calls for us and another thing it work with Metamask API to do all authentications. We need to find who can do what instead of who the user is. 
+  * In this case user is an ethereum account. Also `Webpack` a module bundler allows us to make javascript application unify and reduce complexity. It bundle all files and make it ready for execution on browser
+  ```java
+  truffle unbox webpack
   
+  ```
   
 </details>   
   
+
 
 ## Big Idea
 

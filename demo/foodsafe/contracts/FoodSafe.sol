@@ -30,6 +30,9 @@ contract FoodSafe
        return TrailCount;
    }
    
-   function GetLocation
+   function GetLocation(uint8 TrailNo) returns (string, uint, uint, uint, string)
+   {
+       return (Trail[TrailNo].Name, Trail[TrailNo].LocationId, Trail[TrailNo].PreviousLocationId, Trail[TrailNo].Timestamp, Trail[TrailNo].Secret);
+   }
 
 }

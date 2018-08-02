@@ -194,7 +194,7 @@ truffle console --network production --reset
 > ss.AddPersonScore("amirnabaei", 17);  // when setting variables we use direct call as here, if we wanted return then we add call as in dev environment we did (to get async handler back)
 > ss.GetScore.call("amirnabaei");
 ```
-* By passing above it says our ScoreStore program now running on blockchain and is ready to use. 
+* By passing above it says our ScoreStore program now running on blockchain and is ready to use 
 #### Call External Contract
 * We want to call contract a from contract b
 * After running truffle init then create a contract 
@@ -255,7 +255,7 @@ mg.ShowScore.call("amirnabaei").then(function(returnValue){console.log(returnVal
   * This app uses ethereum blockchain to store information or is a food tracking app. Also we learn how to keep secrets into blockchain
   * For each new batch of product we will be adding new contract to the chain instead of trackin gall products with the same contract and application is able write and read information into contracts(including secretes and public info)
   * First create a contract and test it with TestRPC and verify
-  * Add FoodSafe contract as (here)[address] then `truffle compile` and `migrate` after running `testrpc`
+  *  Make foodSafe contract as [this](https://github.com/anabaei/Blockchain/blob/master/demo/foodsafe/contracts/FoodSafe.sol) and deployed it to migrates and then compile and migrate it while running testrpc
   * then inside `truffle console` 
   ```java
   var fs
@@ -266,7 +266,7 @@ mg.ShowScore.call("amirnabaei").then(function(returnValue){console.log(returnVal
   fs.GetLocation.call(0).then(function(retval){console.log(retval);});   //get first location 
   fs.GetLocation.call(1).then(function(retval){console.log(retval);});   //get second location 
   ```
-  * Now it is ready to upload into blockchain
+  * Now it is ready and time to upload into blockchain
   #### Embed Metamask in app
   * inside `index.js` add default account for everycall that made. We want to compile and send out contract directly to the blockchain via javascript rather than truffle to use it as we done before
    ```java

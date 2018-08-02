@@ -255,8 +255,56 @@ mg.ShowScore.call("amirnabaei").then(function(returnValue){console.log(returnVal
   * This app uses ethereum blockchain to store information or is a food tracking app. Also we learn how to keep secrets into blockchain
   * For each new batch of product we will be adding new contract to the chain instead of trackin gall products with the same contract and application is able write and read information into contracts(including secretes and public info)
   * First create a contract and test it with TestRPC and verify
-  
-
+  * Add FoodSafe contract as (here)[address] then `truffle compile` and `migrate` after running `testrpc`
+  * then inside `truffle console` 
+  ```java
+  var fs
+  FoodSafe.deployed().then(function(deployed){fs=deployed;});
+  fs.AddNewLocation(1000, "The Producer", "Not very secret secret ...");
+  fs.AddNewLocation(2000, "The Supplier", "Still Not very secret secret ...");
+  fs.AddNewLocation(3000, "The Store", "Even Still Not very secret secret ...");
+  fs.GetLocation.call(0).then(function(retval){console.log(retval);});   //get first location 
+  fs.GetLocation.call(1).then(function(retval){console.log(retval);});   //get second location 
+  ```
+  * Now it is ready to upload into blockchain
+  #### Embed Metamask in app
+  * inside `index.js` add default account for everycall that made. We want to compile and send out contract directly to the blockchain via javascript rather than truffle to use it as we done before
+   ```java
+   web3.eth.defaultAccount = account
+  ```
+  * To compile it we need to use solc(solidity compiler) instead of truffle so we need to install it in our transaction node. 
+  * The way to access to transaction node is via `ssh` and we get ssh command from Azure as we done before and fire it up in terminal.
+  * First we need to set a repository right, and set it to ethereum and add yes 
+  ```java
+ sudo add-apt-repository ppa:ethereum/ethereum -y  
+ sudo apt-get update 
+ sudo apt-get install solc -y    // this is actual install 
+  ```
+  * We need to get defination of our contract into a variable, one way is to make it in oneline by removing all line breaks and copy into index.js as 
+  ```java
+      web3.eth.defaultAccount = account
+      var foodSafeSource=" paste here!"
+      web3.eth.compile.solidity(foodSafeSource, function(error, foodSafeCompiled){
+      foodSafeABI = foodSafeCompiled['<stdin>:FoodSafe'].info.abiDefinition;
+      foodSafeContract = web3.eth.contract(foodSafeABI);
+      foodSafeCore = foodSafeCompiled['<stdin>:FoodSafe'].code;
+  ```
+  * And add the funciton as 
+  ```java
+  createContract: function(){
+    foodSafeContract.new("", {from:account, data:foodSafeCode, gas:3000000}, function(error, deployedContract){
+        if(deployedContract.address)
+        {
+          document.getElementById("contractAddress").value=deployedContract.address
+        }
+    }) 
+  },
+  ```
+  * Then inside index.html
+  ```javascript
+  <input id="contractAddress" type="text"></input>
+  <button id="createContract" onclick="App.createContract()"> New Contract</button>
+  ```
   
 </details>   
   

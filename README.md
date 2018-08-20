@@ -456,11 +456,11 @@ ssh -i "bitcoinomni.pem" ubuntu@ec2-34-217-8-51.us-west-2.compute.amazonaws.com
 
 * When we have a public key and designed other nodes, we can create their private keys from adding private master key pluse thier public key. Then in an enterprise which produces blocks with private keys, even if users forget their private keys we can determine them by having own private key and formula.
 * You have one key (master key) and multiple by G ( an elliptic curve funciton and not a simple arithmatic maniplication) then you get the public key. For other branches under master you have new public key equals to two previouse public keys. Since each public key is multiple of private key by G then we can guess private key of new node by others
-![pic]()
-
+![pic](https://user-images.githubusercontent.com/7471619/44353165-14a2e880-a45b-11e8-8ca7-da80482b8cb6.png)
+* Bitcoin cash is faster because it does not work with all blocks it just connect with the like coffee shop channel and do the transaction with. So we hve sidechain which contain all transactions between chains. 
   </details>
 
-
+* Then from the account you can use fabric on top of it
 <details> 
   <summary> HYPERLEDGER, FABRIC, COMPOSER, SAWTOOTH  </summary>
   

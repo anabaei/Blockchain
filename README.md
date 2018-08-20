@@ -368,8 +368,9 @@ Dash:
   * It takes 24 hrs to syncronize, In order to browse and see UI with the instance we use `Public DNS` . Click right on the instance and select `connect`. so if you for example downloaded keypair in desktop go terminal desktop and follow ssh like 
   ```java
   chmod 400 yourifle.pem
-  ssh -i  "filemame" ubuntu...
+  ssh -i "yourifle.pem" ubuntu@ecxxxxxxxxxxxxxxxxxxxxxxxxpute.amazonaws.com
   ```
+ * Now you have connected to your instance!
  * you can use tutorial  below to install bitcore and its interprettors to accept bitcoin in your app
  * login to aws from console 
  * then cloning nvm to make sure you have node --version 4 above 

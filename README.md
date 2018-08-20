@@ -365,7 +365,7 @@ Dash:
   <summary> AWS</summary>
   
   * loging aws -> Select EC2 (like running on cloud)->  Running instance -> ubuntu 16.04 LTS -> Instance Type (12micro) -> add storage 100gb -> add security groups (all trafics) and ip from any where -> choose existence keypair (keypair is a key to connect existed instance -> then run 
-  * It takes 24 hrs to syncronize, In order to browse and see UI with the instance we use `Public DNS` . Click right on the instance and select `connect`. so if you forexample downloaded keypair in desktop go terminal desktop and follow ssh like 
+  * It takes 24 hrs to syncronize, In order to browse and see UI with the instance we use `Public DNS` . Click right on the instance and select `connect`. so if you for example downloaded keypair in desktop go terminal desktop and follow ssh like 
   ```java
   chmod 400 yourifle.pem
   ssh -i  "filemame" ubuntu...
@@ -448,6 +448,8 @@ npm install bitcore-explorers --save
 ssh -i "bitcoinomni.pem" ubuntu@ec2-34-217-8-51.us-west-2.compute.amazonaws.com
 
 ```
+* chmod just for you may forgot
+![here]()
   
   </details>
 

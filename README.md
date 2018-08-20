@@ -449,7 +449,7 @@ ssh -i "bitcoinomni.pem" ubuntu@ec2-34-217-8-51.us-west-2.compute.amazonaws.com
 
 ```
 * chmod just for you may forgot
-![here]()
+![here](https://user-images.githubusercontent.com/7471619/44355026-410d3380-a460-11e8-8679-5428d55d7af6.png)
   
   </details>
 

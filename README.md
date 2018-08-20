@@ -8,7 +8,12 @@
 
 <details> 
   <summary> Fundamental Blockchain </summary>
-
+Different consensues:
+* Proof of work: Is something that bitcoin does we have to do computation to update new block into blockchain
+* Proof of stake: Tells which block is valid as much as high it is
+* Proof of Burn: if you want to exchange your coin then you need to show you burned your current to get new coins instead
+* Proof of space: It is the space of your computer disk. 
+ 
 * Blockchain is Global singleton and unstoppable and no single point of attack. 
 * Bloc: has data, a hash, number(order in chain), timestamp, and the hash of the previous block.
 * Data save into block is accessible to everyone accessing the chain. There are two ways to make private data on blockchain
@@ -387,16 +392,20 @@ Dash:
 ```linux
 ssh -i "bitcoinomni.pem" ubuntu@ec2-35-163-69-172.us-west-2.compute.amazonaws.com
 
-wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+/// below cloning nvm to have it in our instance
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash 
 The script clones the nvm repository to ~/.nvm and adds the source line to your profile (~/.bash_profile, ~/.zshrc, ~/.profile, or ~/.bashrc).
 
+// then we export nvm to part 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
+// type nvm in terminal you should see it is running 
 nvm install v4
-sudo apt-get install libzmq3-dev build-essential
+sudo apt update
+sudo apt-get install libzmq3-dev build-essential 
 
-sudo apt install node-gyp
+sudo apt install node-gyp  // this is c++ interpretter 
 npm -g install bitcore@4.1.0
 
 
@@ -406,17 +415,20 @@ or
 //bitcore create -d <path-to-datadirectory> mynode
 
 cd mynode
-vi bitcore-node.json
-bitcore install insight-api insight-ui   // allows you to see all blockchain in UI
-// now you can see the use by typign public dns from aws and concat :3001/insight
+vi bitcore-node.json  // network is testnet but you can change it to livenet which connect to main bitcoin because it takes time 
+bitcore install insight-api insight-ui   // allows you to install ui to track blockchian
+bitcored  ///run the app with below address 
+url = public DNS(IPv4):3001/insight
 
 // enter interactive node shell
+cd mynode 
 node
 
 // load the bitcore lib
 var bitcore = require('bitcore-lib');
 
-// make a random 32 byte number
+// make a random 32 byte number. First we create a private key and to generate public address we have private key and hash it and then 
+// make it humanread able. 
 var rand_buffer = bitcore.crypto.Random.getRandomBuffer(32);
 
 // convert to a number format
@@ -429,13 +441,13 @@ rand_number
 rand_number.toString()
 
 // use that number to create a Bitcoin address -- DON'T USE THIS ADDRESS ANYWHERE!
+/// we use this random number and give it to privatekey function to create a private key in address which starts with one indicating this is bitcoin address 
+
 var address = new bitcore.PrivateKey(rand_number).toAddress();
 
-// make a testnet Bitcoin address
+// make a testnet Bitcoin address 
+// now we generate an address for test net which would be different than the above address and starts with n not 1 to show this is for network
 var address = new bitcore.PrivateKey(rand_number).toAddress(‘testnet’);
-
-
-address
 
 
 > var bitcore = require('bitcore-lib');
@@ -463,11 +475,21 @@ ssh -i "bitcoinomni.pem" ubuntu@ec2-34-217-8-51.us-west-2.compute.amazonaws.com
 * Bitcoin cash is faster because it does not work with all blocks it just connect with the like coffee shop channel and do the transaction with. So we hve sidechain which contain all transactions between chains. 
   </details>
 
+<details> 
+  <summary>  Byzantine General problem  </summary>
+ 
+ * If one block get two different orders from two blocks which they supposed to be the same, so it is confusion here. But bitocin have solution here.
+ * It is called practical byzentine fault tolerance (PBFT). Three example of blockchain rely on PBFT are `Hyperledger, Stellar and Ripple`
+ * Each general maintains an internal state (ongoing specific informaiton or status). When a general receive a message in conjunction with their internal state to run a computation. Which it made to have individual decisions. Then it shares the decision with all the other generals in the system and a consensus decision is determined based on the total decisions submitted by all generals.
+ * We can write our own hyperledger of fabric for PBFT
+ 
+ </details>
+
 * Then from the account you can use fabric on top of it
 <details> 
-  <summary> HYPERLEDGER, FABRIC, COMPOSER, SAWTOOTH  </summary>
+  <summary>  HYPERLEDGER, FABRIC, COMPOSER, SAWTOOTH  </summary>
   
-  * [HYPERLEDGER](https://www.hyperledger.org/) home page. FABRIC is enterprise level framework which use permision to channel support. 
+  [HYPERLEDGER](https://www.hyperledger.org/) home page. FABRIC is enterprise level framework which use permision to channel support. 
   
 </details>  
 

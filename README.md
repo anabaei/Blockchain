@@ -1,9 +1,9 @@
 # Blockchain
 
-* Blockchain development is the next big thing after invention of Internet
-* With blockchain you can transfer a large money almost instanly to even war foriegn countries and transfer money directly to the device or certifications and secure information in blockchain and even control your virtual products like musicions. 
-* 
-
+* Blockchain is like a link list which we call nodes `merkle trees`.  Mining is verification transactions when we have nounce and data and correct hash required whch the action to get is mining. The valid hash depends on all previouse blocks. In ethereum data is a function. 
+* Blockchain mit edu [link](http://blockchain.mit.edu/how-blockchain-works)
+* Bitcoin wallet just manage the public id. Some ppl develop `proof of work` with smart contracts(ethereum) and chain code developer  (fabric).  
+ 
 ## Fundamental Blockchain
 
 <details> 
@@ -361,12 +361,114 @@ Dash:
   </details>  
 
 
+<details>  
+  <summary> AWS</summary>
+  
+  * loging aws -> Select EC2 (like running on cloud)->  Running instance -> ubuntu 16.04 LTS -> Instance Type (12micro) -> add storage 100gb -> add security groups (all trafics) and ip from any where -> choose existence keypair (keypair is a key to connect existed instance -> then run 
+  * It takes 24 hrs to syncronize, In order to browse and see UI with the instance we use `Public DNS` . Click right on the instance and select `connect`. so if you forexample downloaded keypair in desktop go terminal desktop and follow ssh like 
+  ```java
+  chmod 400 yourifle.pem
+  ssh -i  "filemame" ubuntu...
+  ```
+ * you can use tutorial  below to install bitcore and its interprettors to accept bitcoin in your app
+ * login to aws from console 
+ * then cloning nvm to make sure you have node --version 4 above 
+ * Then install build essential tools 
+ * We use Nodejs to make in future bitcoin wallet. We use bitcore which is just a wraper to bitcoin core code annd [bitpay](https://bitpay.com/) to buy bitcoin with usd. 
+ 
+  
+  </details>
+  
+  <details>
+  <summary> Tutorial </summary>
+
+
+```linux
+ssh -i "bitcoinomni.pem" ubuntu@ec2-35-163-69-172.us-west-2.compute.amazonaws.com
+
+wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash
+The script clones the nvm repository to ~/.nvm and adds the source line to your profile (~/.bash_profile, ~/.zshrc, ~/.profile, or ~/.bashrc).
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+nvm install v4
+sudo apt-get install libzmq3-dev build-essential
+
+sudo apt install node-gyp
+npm -g install bitcore@4.1.0
+
+
+bitcore create mynode --testnet  // this create mynode folder 
+// bitcored
+or 
+//bitcore create -d <path-to-datadirectory> mynode
+
+cd mynode
+vi bitcore-node.json
+bitcore install insight-api insight-ui   // allows you to see all blockchain in UI
+// now you can see the use by typign public dns from aws and concat :3001/insight
+
+// enter interactive node shell
+node
+
+// load the bitcore lib
+var bitcore = require('bitcore-lib');
+
+// make a random 32 byte number
+var rand_buffer = bitcore.crypto.Random.getRandomBuffer(32);
+
+// convert to a number format
+var rand_number = bitcore.crypto.BN.fromBuffer(rand_buffer);
+
+// print out the number
+rand_number
+
+// print in decimal
+rand_number.toString()
+
+// use that number to create a Bitcoin address -- DON'T USE THIS ADDRESS ANYWHERE!
+var address = new bitcore.PrivateKey(rand_number).toAddress();
+
+// make a testnet Bitcoin address
+var address = new bitcore.PrivateKey(rand_number).toAddress(‘testnet’);
+
+
+address
+
+
+> var bitcore = require('bitcore-lib');
+undefined
+> bitcore.PrivateKey('testnet').toWIF()
+'cSyUmWBHT8nufD3opBTeb66uikCtKgddAjeNjfXhcwq3eLM5Ft5w'
+
+npm install bitcore-explorers --save
+
+
+ssh -i "bitcoinomni.pem" ubuntu@ec2-34-217-8-51.us-west-2.compute.amazonaws.com
+
+```
+  
+  </details>
+
+<details>
+  <summary> Hierarchical Deterministic Wallets </summary>
+
+* When we have a public key and designed other nodes, we can create their private keys from adding private master key pluse thier public key. Then in an enterprise which produces blocks with private keys, even if users forget their private keys we can determine them by having own private key and formula.
+* You have one key (master key) and multiple by G ( an elliptic curve funciton and not a simple arithmatic maniplication) then you get the public key. For other branches under master you have new public key equals to two previouse public keys. Since each public key is multiple of private key by G then we can guess private key of new node by others
+![pic]()
+
+  </details>
+
+
 <details> 
   <summary> HYPERLEDGER, FABRIC, COMPOSER, SAWTOOTH  </summary>
   
   * [HYPERLEDGER](https://www.hyperledger.org/) home page. FABRIC is enterprise level framework which use permision to channel support. 
   
 </details>  
+
+
 
 
 

@@ -371,8 +371,7 @@ Dash:
  
   * A good AWS reference for [node](https://node.university/blog/1001486/aws-ec2-hello-node)
   * In order to download cassandra needs ruby first then go to this [link](https://gist.github.com/virajkulkarni14/1f79175ddbb2a0595118be8a9431f4bd)
-  * To download ruby use `sudo yum install ruby` `ruby --version`
- 
+  * To download ruby use `sudo yum install ruby` `ruby --version` and for cassandra you need pip so `sudo easy_install pip`
   * loging aws -> Select EC2 (like running on cloud)->  Running instance -> ubuntu 16.04 LTS -> Instance Type (12micro) -> add storage 100gb -> add security groups (all trafics) and ip from any where -> choose existence keypair (keypair is a key to connect existed instance -> then run 
   * It takes 24 hrs to syncronize, In order to browse and see UI with the instance we use `Public DNS` . Click right on the instance and select `connect`. so if you for example downloaded keypair in desktop go terminal desktop and follow ssh like 
   ```java
@@ -385,7 +384,7 @@ Dash:
  * then cloning nvm to make sure you have node --version 4 above 
  * Then install build essential tools 
  * We use Nodejs to make in future bitcoin wallet. We use bitcore which is just a wraper to bitcoin core code annd [bitpay](https://bitpay.com/) to buy bitcoin with usd. 
- 
+ * 
   
   </details>
   
@@ -416,7 +415,6 @@ sudo apt-get install git /// to install git or use sudo yum install git
 
 sudo apt install node-gyp  // this is c++ interpretter 
 npm -g install bitcore@4.1.0
-
 
 
 bitcore create mynode --testnet  // this create mynode folder 
@@ -459,14 +457,12 @@ var address = new bitcore.PrivateKey(rand_number).toAddress();
 // now we generate an address for test net which would be different than the above address and starts with n not 1 to show this is for network
 var address = new bitcore.PrivateKey(rand_number).toAddress(‘testnet’);
 
-
 > var bitcore = require('bitcore-lib');
 undefined
 > bitcore.PrivateKey('testnet').toWIF()
 'cSyUmWBHT8nufD3opBTeb66uikCtKgddAjeNjfXhcwq3eLM5Ft5w'
 
 npm install bitcore-explorers --save
-
 
 ssh -i "bitcoinomni.pem" ubuntu@ec2-34-217-8-51.us-west-2.compute.amazonaws.com
 

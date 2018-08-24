@@ -403,7 +403,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 
 // type nvm in terminal you should see it is running 
-nvm install v4
+nvm install v4  // for other purposes to run: need nvm i v8 
 // if apt-get not working try using yum since amazon is on RedHat base  
 sudo apt update
 sudo apt-get install libzmq3-dev build-essential 
@@ -412,6 +412,7 @@ sudo apt-get install git /// to install git or use sudo yum install git
 
 sudo apt install node-gyp  // this is c++ interpretter 
 npm -g install bitcore@4.1.0
+
 
 
 bitcore create mynode --testnet  // this create mynode folder 

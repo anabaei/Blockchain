@@ -394,6 +394,8 @@ ssh -i "bitcoinomni.pem" ubuntu@ec2-35-163-69-172.us-west-2.compute.amazonaws.co
 
 /// below cloning nvm to have it in our instance
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash 
+// if not working says wget not found so download it as below 
+sudo yum install wget
 The script clones the nvm repository to ~/.nvm and adds the source line to your profile (~/.bash_profile, ~/.zshrc, ~/.profile, or ~/.bashrc).
 
 // then we export nvm to part 
@@ -402,6 +404,7 @@ export NVM_DIR="$HOME/.nvm"
 
 // type nvm in terminal you should see it is running 
 nvm install v4
+// if apt-get not working try using yum since amazon starting using it 
 sudo apt update
 sudo apt-get install libzmq3-dev build-essential 
 

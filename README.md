@@ -379,6 +379,13 @@ Dash:
   <summary> AWS</summary>
  
   * A good AWS reference for [node](https://node.university/blog/1001486/aws-ec2-hello-node)
+  * To donwload latest node we can have
+  ```javascript
+  curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+  sudo apt-get install -y nodejs
+  ```
+  * from [here](https://askubuntu.com/questions/426750/how-can-i-update-my-nodejs-to-the-latest-version)
+  
   * To run the app in AWS you need to use npm i -g pm2@2.4.3 which is [here](http://pm2.keymetrics.io/)
   * In order to download cassandra needs ruby first then go to this [link](https://gist.github.com/virajkulkarni14/1f79175ddbb2a0595118be8a9431f4bd)
   * To download ruby use `sudo yum install ruby` `ruby --version` and for cassandra you need pip so `sudo easy_install pip`

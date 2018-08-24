@@ -32,5 +32,6 @@
  
  * So After sending SYN message, receving SYN ACK and sending ACK then we stablish our source and destincation port numbers and sessions we are going to use to transfer our HTTPS trafic. In fact HTTP trafic rapped up inside of TLS in an encrypted way. Once three way handshake is done TLS wil kick in and send hello message to server as below
  ![handke](https://user-images.githubusercontent.com/7471619/44602607-eee84d00-a794-11e8-9a9e-d647ff10d986.png)
-  
+  Supported Cipher Suites have sessionid and URL of the server we communicate with. Then the server send back Hello to client. Then client select the highest version of TLS which both client and server supports.
+  * Once the server done with Hello, it sends certificate to client. 
 <details>

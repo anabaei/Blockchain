@@ -379,6 +379,7 @@ Dash:
   <summary> AWS</summary>
  
   * A good AWS reference for [node](https://node.university/blog/1001486/aws-ec2-hello-node)
+  * To run the app in AWS you need to use npm i -g pm2@2.4.3 which is [here](http://pm2.keymetrics.io/)
   * In order to download cassandra needs ruby first then go to this [link](https://gist.github.com/virajkulkarni14/1f79175ddbb2a0595118be8a9431f4bd)
   * To download ruby use `sudo yum install ruby` `ruby --version` and for cassandra you need pip so `sudo easy_install pip`
   * loging aws -> Select EC2 (like running on cloud)->  Running instance -> ubuntu 16.04 LTS -> Instance Type (12micro) -> add storage 100gb -> add security groups (all trafics) and ip from any where -> choose existence keypair (keypair is a key to connect existed instance -> then run 

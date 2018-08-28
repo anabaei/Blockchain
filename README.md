@@ -371,6 +371,27 @@ Dash:
 <details>  
   <summary> AWS</summary>
  
+  * To install Node in ubunto aws raw instance 
+  * from here to install [nvm](https://github.com/creationix/nvm)
+  ```java
+  
+  wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash 
+  // then we export nvm to part 
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+  
+  nvm ls-remote // to see available list of nvm s
+  // type nvm in terminal you should see it is running 
+  nvm install v8.0.  // for other purposes to run: need nvm i v8 
+  // if apt-get not working try using yum since amazon is on RedHat base  
+  sudo apt update
+  sudo apt-get install libzmq3-dev build-essential 
+  
+  // below are already installed then ///
+  sudo apt-get install git /// to install git or use sudo yum install git
+  sudo npm install -g n  // to install some helper like n 
+  sudo n stable  // to install the latest version
+  ```
   * A good AWS reference for [node](https://node.university/blog/1001486/aws-ec2-hello-node)
   * To donwload latest node we can have
   ```javascript
@@ -414,9 +435,8 @@ Dash:
   <details>
   <summary> Tutorial </summary>
 
-
 ```linux
-ssh -i "bitcoinomni.pem" ubuntu@ec2-35-163-69-172.us-west-2.compute.amazonaws.com
+ssh -i "bitcoinomni.pem" ubuntu@ec2-.....pute.amazonaws.com
 
 /// below cloning nvm to have it in our instance
 wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.33.8/install.sh | bash 

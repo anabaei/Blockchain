@@ -204,8 +204,6 @@ truffle console --network production --reset
 * We want to call contract a from contract b
 * After running truffle init then create a contract 
 First define a contract that resemble the contract we already have at another place to tell solidity about the structure of the contract we are going to use. We can define limited function in it. We call our interface IScoreStore. Since we are going to use only GetScore function so we just make a place holder of it first. MyGame is our contract which going to have a function showname using getName funciton from storescore contract. Inside ShowScore create instance of our interface and we call it scorestore.
-
-
 ```java
 prgma solidity ^0.4.4;
 contract IScoreStore{
@@ -382,6 +380,20 @@ Dash:
   * from [here](https://askubuntu.com/questions/426750/how-can-i-update-my-nodejs-to-the-latest-version)
   
   * To run the app in AWS you need to use npm i -g pm2@2.4.3 which is [here](http://pm2.keymetrics.io/)
+  * If running pm2 has issue you can find it and export the running path into `~/.bashrc` as
+  ```java
+  whereis pm2
+  export PATH=$PATH:/opt/... // the location we found 
+  source ~/.bashrc // to rerun the bash file or you can exit and log in again 
+  pm2 logs  /// display errors 
+  ```
+  * One err that killed me in node js 
+  ```
+  SyntaxError: Block-scoped declarations (let, const, function, class) 
+  ```
+  solution :
+  ```
+  ```
   * In order to download cassandra needs ruby first then go to this [link](https://gist.github.com/virajkulkarni14/1f79175ddbb2a0595118be8a9431f4bd)
   * To download ruby use `sudo yum install ruby` `ruby --version` and for cassandra you need pip so `sudo easy_install pip`
   * loging aws -> Select EC2 (like running on cloud)->  Running instance -> ubuntu 16.04 LTS -> Instance Type (12micro) -> add storage 100gb -> add security groups (all trafics) and ip from any where -> choose existence keypair (keypair is a key to connect existed instance -> then run 

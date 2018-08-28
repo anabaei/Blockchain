@@ -2,7 +2,7 @@
 
 * Blockchain is like a link list which we call nodes `merkle trees`.  Mining is verification transactions when we have nounce and data and correct hash required whch the action to get is mining. The valid hash depends on all previouse blocks. In ethereum data is a function. 
 * Blockchain mit edu [link](http://blockchain.mit.edu/how-blockchain-works)
-* Bitcoin wallet just manage the public id. Some ppl develop `proof of work` with smart contracts(ethereum) and chain code developer  (fabric).  
+* Bitcoin wallet just manage the public id. Some ppl develop `proof of work` with smart contracts(ethereum) and chain code developer  (fabric)
  
 ## Fundamental Blockchain
 

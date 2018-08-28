@@ -313,8 +313,6 @@ mg.ShowScore.call("amirnabaei").then(function(returnValue){console.log(returnVal
   
 </details>   
   
-
-
 ## Big Idea
 
 <details> 
@@ -349,7 +347,6 @@ Dash:
  <details> 
    <summary> Bitcoinj </summary>
    
-   
    * [Bitcoinj](https://bitcoinj.github.io/getting-started) implemented in Java 7 and can be used any languages that target the JVM
    
    ```javascript
@@ -362,7 +359,6 @@ Dash:
    var vanity = address.substring(0,10);  // generate vanity 
    console.log(vanity);
    ```
-
   </details>  
 
 <details> 
@@ -371,7 +367,6 @@ Dash:
 * `sudo apt install openjdk-8-jre -y`
 * useful [link](https://www.vultr.com/docs/how-to-install-apache-cassandra-3-11-x-on-ubuntu-16-04-lts)
  
-
 </details>
 
 

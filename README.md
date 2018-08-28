@@ -359,11 +359,14 @@ Dash:
    ```
   </details>  
 
+http://ec2-54-153-22-112.us-west-1.compute.amazonaws.com:3000
+
 <details> 
  <summary> Install Cassandra on Linux ubunto   </summary>
 
 * `sudo apt install openjdk-8-jre -y`
 * useful [link](https://www.vultr.com/docs/how-to-install-apache-cassandra-3-11-x-on-ubuntu-16-04-lts)
+ 
  
 </details>
 

@@ -366,6 +366,15 @@ http://ec2-54-153-22-112.us-west-1.compute.amazonaws.com:3000
 
 * `sudo apt install openjdk-8-jre -y`
 * useful [link](https://www.vultr.com/docs/how-to-install-apache-cassandra-3-11-x-on-ubuntu-16-04-lts)
+* After running `nodetool status` if you see error then you should find file cassandra.env and uncomment and insert `127.0.0.1` instead of `public name` 
+```java
+lcoate cassandra-env.sh
+sudo vi /etc/cassandra/cassandra-env.sh
+JVM_OPTS="$JVM_OPTS -Djava.rmi.server.hostname=<public name>" //replace public name with 127.0.0.1
+JVM_OPTS="$JVM_OPTS -Djava.rmi.server.hostname=127.0.0.1"    // to search in vi use :/name
+sudo service cassandra stop
+sudo service cassandra start
+```
  
  
 </details>

@@ -394,12 +394,17 @@ sudo service cassandra start
   
   nvm ls-remote // to see available list of nvm s
   // type nvm in terminal you should see it is running 
-  nvm install v8.0.  // for other purposes to run: need nvm i v8 
+  nvm install v10.9.0  // for other purposes to run: need nvm i v8 
   // if apt-get not working try using yum since amazon is on RedHat base  
   sudo apt update
-  sudo apt-get install libzmq3-dev build-essential 
+  ////////////////////////////////////////
+  ///// Now Ready to git cloen node ////// 
+  ////////////////////////////////////////
+  Then git clone and npm install and ready to use pm2 
+  npm i -g pm2
+  pm2 start server.js 
   
-  // below are already installed then ///
+  // below are already installed but if not you can try  ///
   sudo apt-get install git /// to install git or use sudo yum install git
   sudo npm install -g n  // to install some helper like n 
   sudo n stable  // to install the latest version

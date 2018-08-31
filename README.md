@@ -596,8 +596,16 @@ ssh -i "bitcoinomni.pem" ubuntu@ec2-34-217-8-51.us-west-2.compute.amazonaws.com
   ```javascript
   node query.js  // to see result of query
   ```
-  * To see inside it we can run `vi query.js` as ![here]()
+  * To see inside it we can run `vi query.js` as here
+  * ![here](https://user-images.githubusercontent.com/7471619/44938542-7e14d800-ad34-11e8-88cd-511d7a94896a.png)
+  As there is an id name `fabcar` and a function `queryAllCars` which returns all cars in the chain code
+  * Inside `chaincode/fabcar` folder you can see the chaincode which two version of chaincode exist in go and node. Inside node open fabcar.js. 
+  *  We can find more in `fabric node sdk` where the documentation about node sdk is [here](https://fabric-sdk-node.github.io/). There are different types `fabric client` and `fabric-ca-client ` 
+  * `fabric-shim` use for API calls and `util` is basic encoding decoding tool. It means first it converts english to `hex` then it convert it to `binary`.  
   
+  #### Chain Code 
+  * `Chain Code` are like small contracts but much more complex than contracts. `Channel` is a private network or nodes that can talk and share each other legend info. 
+  * First we need to install chain code into our `peers` of the channel and `peer` can be our own laptop or AWS. So the `chain code` would be same for everyone. 
   
   ### HyperLedger Fabric Composer Language (Composer language)  
   * Good [link](https://hyperledger-fabric.readthedocs.io/en/release-1.2/blockchain.html) for fabric 

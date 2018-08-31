@@ -563,7 +563,48 @@ ssh -i "bitcoinomni.pem" ubuntu@ec2-34-217-8-51.us-west-2.compute.amazonaws.com
 <details> 
   <summary>  HYPERLEDGER, FABRIC, COMPOSER, SAWTOOTH  </summary>
   
-  [HYPERLEDGER](https://www.hyperledger.org/) home page. FABRIC is enterprise level framework which use permision to channel support. 
+  ### 
+  * Run AWS instance first using ubunto, 30 memory and connect it 
+  * Do the setup by downloading docker and nvm 
+  ```java
+  curl -O https://hyperledger.github.io/composer/latest/prereqs-ubuntu.sh
+  chmod u+x prereqs-ubuntu.sh
+  ./prereqs-ubuntu.sh  // which downloaded all pre reqs like dokcer, python npm node 
+  ```
+  * Then clone the marbles applicatio as here
+  ```java
+   git clone https://github.com/IBM-blockchain/marbles         // cd marbles 
+   git clone https://github.com/hyperledger/fabric-samples     // inside marbles clone it  then cd fabric-samples
+   wget https://dl.google.com/go/go1.10.linux-amd64.tar.gz     // since this code requires Go so install go 
+   sudo tar -C /usr/local -xzf go1.10.linux-amd64.tar.gz
+   sudo vi /home/ubuntu/.profile                               // thee add below to it 
+   export PATH=$PATH:/usr/local/go/bin
+   cd scripts
+   ./bootstrap.sh                                             // to install latest version of fabric and we have docker hub like github
+   docker ps                                             // shows what docker container we are running now 
+   cd .. then cd fabcar  then ./startFabric.sh          // now we are running fabcar network, 
+   docker ps                 // we should see inside docker whihc we saw six container are running here 
+  ```
+  * Inisde `startFabric.sh` you can see how we call a docker. Where a `docker-compose` show docker we are doing all containers inside yml file. Next would be `exec` them which means login to them and run these commands and at the bottom we print what we did. so main thing here is `docker-compose.yml` inside `basic-network` to see what docker containers are available here and tell them what type of certification you need. Also the port you need to connect and admin authentications.
+  * Then you need to enroll admin using node.js 
+  ```javascript:
+  npm install 
+  node enrollAdmin.js    // then we see a certificate to enroll a new admin
+  node registerUser.js   // it enroll  a user call user1 
+  ```
+  * Registering is creating user in Blockchain but Enrolling is giving access to users to connect and use blockchain
+  ```javascript
+  node query.js  // to see result of query
+  ```
+  * To see inside it we can run `vi query.js` as ![here]()
+  
+  
+  ### HyperLedger Fabric Composer Language (Composer language)  
+  * Good [link](https://hyperledger-fabric.readthedocs.io/en/release-1.2/blockchain.html) for fabric 
+  * Useful link to [test](http://composer-playground.mybluemix.net/login) and get started to start fabric programming language 
+  * In here we have assets, participants and transactions. Which we can change them 
+  * [HYPERLEDGER](https://www.hyperledger.org/) home page. FABRIC is enterprise level framework which use permision to channel support. 
+  
   
 </details>  
 

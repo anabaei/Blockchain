@@ -612,8 +612,41 @@ ssh -i "bitcoinomni.pem" ubuntu@ec2-34-217-8-51.us-west-2.compute.amazonaws.com
   #### A Function in Fabric
   * First it initialize cars with attributes name like owner 
   * ![1](https://user-images.githubusercontent.com/7471619/44941955-5174b680-ad5c-11e8-8131-6e147cec223d.png)
-  This function can change the owner name. By passing two attributes to it, first is in arg[0] and second which is the name of new owner in arg[1].
-  * ![2]()
+  This function can change the owner name. By passing two arguments, first car id as arg[0] and second the name of new owner in arg[1]
+  * ![2](https://user-images.githubusercontent.com/7471619/44941966-6b15fe00-ad5c-11e8-829e-bdf06e7ab397.png)
+  At the line below it find the car base based on id and then convert it to a readable format
+  ```javascript
+    let carAsBytes = await stub.getState(args[0]);
+    let car = JSON.parse(carAsBytes);
+  ```
+  Then in next line assign new owner 
+  ```javascript
+  car.owner = args[1];
+  ```
+  And finally submit the results 
+  ```javascript
+  await stub.putState(args[0], Buffer.from(JSON.stringify(car)));
+  ```
+  #### hfc keys
+  * Inside `~/marbles/fabric-samples/fabcar/hfc-key-store` you can see private and public keys for the user to authorize transactions in blockchain.
+  
+  #### Run and See App
+  * As we already run the app before we can check it by `docker ps`. Also requires `npm install` in marbel folder. So far we saw chaincode of `fabcar` we need `chaincode` for `marble` as well so first install it. so 
+  ```javascript
+  //in scripts may not neccessay ./build_marbles_image.sh
+  npm install gulp -g 
+ gulp marbles_local  // it compiles marbles applicatin locally without data configuration 
+  
+ // to install it marble again after cloning just in case if something wrong 
+ git branch -a 
+ git checkout v4.0
+ npm install gulp -g 
+ docker ps
+ npm install
+ gulp marbles_local
+ /////
+  ```
+  
   
   ### HyperLedger Fabric Composer Language (Composer language)  
   * Good [link](https://hyperledger-fabric.readthedocs.io/en/release-1.2/blockchain.html) for fabric 

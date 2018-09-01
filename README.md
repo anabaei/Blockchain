@@ -611,7 +611,7 @@ ssh -i "bitcoinomni.pem" ubuntu@ec2-34-217-8-51.us-west-2.compute.amazonaws.com
   
   #### A Function in Fabric
   * First it initialize cars with attributes name like owner 
-  * ![1]()
+  * ![1](https://user-images.githubusercontent.com/7471619/44941955-5174b680-ad5c-11e8-8131-6e147cec223d.png)
   This function can change the owner name. By passing two attributes to it, first is in arg[0] and second which is the name of new owner in arg[1].
   * ![2]()
   

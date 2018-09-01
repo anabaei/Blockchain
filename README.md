@@ -606,6 +606,14 @@ ssh -i "bitcoinomni.pem" ubuntu@ec2-34-217-8-51.us-west-2.compute.amazonaws.com
   #### Chain Code 
   * `Chain Code` are like small contracts but much more complex than contracts. `Channel` is a private network or nodes that can talk and share each other legend info. 
   * First we need to install chain code into our `peers` of the channel and `peer` can be our own laptop or AWS. So the `chain code` would be same for everyone. 
+  * HyperLedger Fabric is a state machine in fact, every minor changes in assets you have a transaction and have a new state
+  * in `fabcar.js` for example we can see 4 functions. One is `initledger` perform initial data inputs, another is `create car`, `queryAllcars` and `changeCarOwner`. 
+  
+  #### A Function in Fabric
+  * First it initialize cars with attributes name like owner 
+  * ![1]()
+  This function can change the owner name. By passing two attributes to it, first is in arg[0] and second which is the name of new owner in arg[1].
+  * ![2]()
   
   ### HyperLedger Fabric Composer Language (Composer language)  
   * Good [link](https://hyperledger-fabric.readthedocs.io/en/release-1.2/blockchain.html) for fabric 

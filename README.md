@@ -401,6 +401,27 @@ yo keystone
 // use it if you got error!  nvm use --delete-prefix v8.0.0 --silent
 npm install -g yo
 ```
+* In order to run a new app with keystone
+```javascript
+yo keystone 
+```
+Then select pug and the rest `N` and use this link as guide [guide](https://keystonejs.com/getting-started/)
+* Or follow these
+```javascript
+hbs
+sass
+yes blog
+yes image
+yes contant 
+User model : User 
+task runner: gulp
+email configuration: n
+extra comments: y
+run node keystone 
+```
+* Now we have the keystone with blog and contact info which we can configure contact to send us email
+* After connecting we have backend here like posts, categories, galleries, Users and enquiries for contact forms
+* 
 * Then check the mongodb or follow [this](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
 ```javascript
 ls /data/db

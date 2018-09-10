@@ -384,6 +384,27 @@ JVM_OPTS="$JVM_OPTS -Djava.rmi.server.hostname=127.0.0.1"    // to search in vi 
 sudo service cassandra stop
 sudo service cassandra start
 ```
+</details>
+
+
+<details>  
+  <summary> CRM with Node & React</summary>
+
+* Follow this [like](https://itnext.io/building-a-node-cms-with-keystonejs-mongo-db-react-and-redux-part-i-ae5958496df2)
+* To follow that link there is a problem with mongo check mongo with `ps -ax | grep mongo` or `service mongod status`
+```javascript
+npm config set prefix ~/npm
+echo "export NODE_PATH=$NODE_PATH:/home/$USER/npm/lib/node_modules" 
+source ~/.bashrc
+npm install -g yo
+
+nvm use --delete-prefix v8.0.0 --silent
+
+npm install -g generator-keystone
+yo keystone
+
+```
+
 
 </details>
 

@@ -312,7 +312,6 @@ mg.ShowScore.call("amirnabaei").then(function(returnValue){console.log(returnVal
 </details>   
   
 ## Big Idea
-
 <details> 
    <summary> Bitocin </summary>
  
@@ -396,16 +395,21 @@ sudo service cassandra start
 npm config set prefix ~/npm
 echo "export NODE_PATH=$NODE_PATH:/home/$USER/npm/lib/node_modules" 
 source ~/.bashrc
-npm install -g yo
-
-nvm use --delete-prefix v8.0.0 --silent
-
 npm install -g generator-keystone
-yo keystone
+yo keystone 
 
+// use it if you got error!  nvm use --delete-prefix v8.0.0 --silent
+npm install -g yo
 ```
-
-
+* Then check the mongodb or follow [this](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
+```javascript
+ls /data/db
+```
+* If your system PATH variable includes the location of the `mongod` binary and if you use the default data directory (i.e., /data/db), simply enter `mongod`. Then if you see `[initandlisten] waiting for connections on port 27017` it means mongod is running  
+* Then run the program by
+```javascript
+node keystone
+```
 </details>
 
 

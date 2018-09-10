@@ -458,7 +458,62 @@ Product.add({
 Product.register();
 ```
 * Then go to routes/views and creaate two views one for `product`and another one for `products`
-* So in 
+* And also create `routes/views/product.js`
+* products.js is like below
+```javascript
+var keystone = require('keystone');
+
+exports = module.exports = function(req, res) {
+ var view = new keystone.View(req,res);
+ var locals = res.locals;
+ // set locals
+ locals.section = 'store';  // section is what appears in nav bar 
+ // Load products
+ // so take a model and pass model to it, then use model and find common methods to pass data to products view
+ view.query('products', keystone.list('Product').model.find());
+ 
+ // render our view
+ view.render('products');
+}
+```
+The key store is connected to `local.section store` 
+* Then to set routes we need to go to `routes/index.js`
+```javascript
+app.get('/products', routes.views.products);
+```
+* Then add something in `views/middleware` to have it in menue item as
+```javascript
+{ label: 'Store', key: 'store', href: '/products' },
+```
+* Now create a template for our `views` so go to `templates/views` and create  `products.hbs` and just say PRODUCTS in it 
+```javascript
+PRODUCTS
+```
+Now it should work 
+* We Can create different products and to show them in front end we need to modify the hbs file as
+```javascript
+<div class = "container">
+  <h1> Products </h1>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="row">
+      {{# each products}}
+         <div class="col-md-4">
+	    <h2><a href=""> {{{title}}}</a></h2>
+	    {{#if image}}
+	      <img src="{{{cloudinaryUrl image crop="fit"}}}" width=160 height=160 class="thumbnail" >
+	    {{/if}}
+	 </div>
+	 {{/each}}
+      </div>
+   </div>
+ </div>
+</div>
+```
+And check the front end at `http://localhost:3000/products` 
+#### Create Each product page
+* Which you can find it after 30 minutes at [here](https://www.youtube.com/watch?v=DPXDFeUEk3g)
+
 * Then check the mongodb or follow [this](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
 ```javascript
 ls /data/db

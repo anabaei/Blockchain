@@ -514,6 +514,8 @@ And check the front end at `http://localhost:3000/products`
 #### Create Each product page
 * Which you can find it after 30 minutes at [here](https://www.youtube.com/watch?v=DPXDFeUEk3g)
 
+### Mongodb
+* A CRUD [document](https://docs.mongodb.com/manual/crud/)
 * Then check the mongodb or follow [this](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
 ```javascript
 ls /data/db

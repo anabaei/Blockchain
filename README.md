@@ -406,7 +406,8 @@ npm install -g yo
 yo keystone 
 ```
 Then select pug and the rest `N` and use this link as guide [guide](https://keystonejs.com/getting-started/)
-* Or follow these
+
+* Or follow [this youtube](https://www.youtube.com/watch?v=DPXDFeUEk3g) 
 ```javascript
 hbs
 sass
@@ -421,7 +422,43 @@ run node keystone
 ```
 * Now we have the keystone with blog and contact info which we can configure contact to send us email
 * After connecting we have backend here like posts, categories, galleries, Users and enquiries for contact forms
-* 
+* Notice in package json you won't see Express since it is handled by keystone
+* To add one product group we should start from models folder, then inside routes/index.js define new routes to point a view inside view folder.
+* View folder is like controller which we call the model to create for example gallery and call find and sort it. Then render view which is inside `template` folder a view hbs file.  
+* Also we have helper folder which we gonna add post helper for product in it
+* Inside models create `Product.js`. It follows [this](https://keystonejs.com/getting-started/yo-generator/) 
+```javascript
+var keystone = require('keystone');
+var Types = keystone.Field.Types;
+
+/**
+ * Product Model
+ * ==========
+ */
+
+var Product = new keystone.List('Product',{
+map: {name : 'title'},
+singulare: 'Product',
+plural: 'Products',
+autokey: {path: 'slug', from: 'title', unique: true }
+
+});
+
+Product.add({
+	title: { type: String},
+	price: { type: Number},
+  qty: { type: Number},
+  describtion: { type: Types.Html , wysiwyg: true, height: 300},
+
+	image: { type: Types.CloudinaryImage },
+  publishedDate: {type: Date, default: Date.now }
+
+});
+
+Product.register();
+```
+* Then go to routes/views and creaate two views one for `product`and another one for `products`
+* So in 
 * Then check the mongodb or follow [this](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-os-x/)
 ```javascript
 ls /data/db

@@ -35,3 +35,36 @@
   * docker-machine gives you list all commnads 
    
 </details>
+
+<details>
+       <summary> Install </summary>
+       
+* from `store.docker` install `docker ce` community edition for mac and choose stable. You can change how much `cpu` you gonna use or memory you like to dedicate
+* Test in command prompt as 
+```linux
+docker
+docker images 
+```
+* `Docker tool` is for older machines 
+* `Docker Kitmatic` is a visual one to help us see docker images and search them all in internet 
+* Install `dockerToolbox` from [here](https://docs.docker.com/toolbox/toolbox_install_mac/)
+* 
+
+</details>  
+
+<details>
+       <summary> Docker Machine </summary>
+       
+* Docker machine commands 
+```javascript
+docker-machine ls      // this is a docker-machine tool to run command `ls` to list all machines we can issue 
+docker-machine start [machine-name]     // we can start/stop anytime docker machine, default is the name of default machine
+docker-machine env [machine-name]       // to show what environment this machine works 
+docker-machine ip [machine-name]        // we can also get ip of the machine 
+```
+* Here is docker [docs](https://docs.docker.com/get-started/part2/)
+       
+</details>
+
+
+

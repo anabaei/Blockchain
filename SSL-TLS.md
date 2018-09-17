@@ -1,4 +1,5 @@
 
+* SSL vs SSH (Secure Shell). They both looks like each other unless SSL is working with sockets and SSH works with shell only. A formal defination is SSL Secure Socket Layer is a certificate for protecting data on the net, SSH, Secure Shell, is a network application used to transfer or share data with a remote computer
 <details>
          <summary> TLS Encryption</summary>
 

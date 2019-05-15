@@ -36,3 +36,9 @@
   Supported Cipher Suites have sessionid and URL of the server we communicate with. Then the server send back Hello to client. Then client select the highest version of TLS which both client and server supports.
   * Once the server done with Hello, it sends certificate to client. 
 <details>
+         <summary> Oauth 2, JWT Authentication method </summary>
+ 
+ * Means users login into application, then front end send them to third pary server (OAuth Server), which is simple login page. Then after validation the temporary token access send to application. 
+ 
+ * JWT: is a tool to security comunicate json between source and client. 
+</details>

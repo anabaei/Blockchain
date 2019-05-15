@@ -28,6 +28,7 @@
  * In order to have certificate chain we need certificate authority server. We can setup our own certificate server using `open SSL` to generate certificate to own network. If we want we can have this as public by purchasing online certification. Then they publish some information out there into our browser to allow us that verify that web server is browsing to you are actually what they say they are
  
  </details>
+ 
 <details>
          <summary> TLS Handshake </summary>
  
@@ -35,10 +36,12 @@
  ![handke](https://user-images.githubusercontent.com/7471619/44602607-eee84d00-a794-11e8-9a9e-d647ff10d986.png)
   Supported Cipher Suites have sessionid and URL of the server we communicate with. Then the server send back Hello to client. Then client select the highest version of TLS which both client and server supports.
   * Once the server done with Hello, it sends certificate to client. 
+ </details>
 <details>
          <summary> Oauth 2, JWT Authentication method </summary>
  
  * Means users login into application, then front end send them to third pary server (OAuth Server), which is simple login page. Then after validation the temporary token access send to application. 
  
- * JWT: is a tool to security comunicate json between source and client. 
+ * JWT: is a tool to make security comunicate as json objects. It is secure because it is digitaly signed. JWTs can be signed using a secret (with the HMAC algorithm) or a public/private key pair using RSA or ECDSA.
+ [source](https://jwt.io/introduction/)
 </details>
